@@ -14,6 +14,10 @@ a little javascript project to generate gradient color based on a picture to put
 ## Demo
 
 https://NacreousDawn596.github.io/dynamic-background/
+
+or
+
+https://NacreousDawn596.github.io/dynamic-background/example.html
 ## Documentation
 
 ### you can import all the functions to your html like so:
