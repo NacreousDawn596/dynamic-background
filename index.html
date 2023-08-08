@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Demo</title>
+    <style>
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #1D1D1F, #000);
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            color: #1D1D1F;
+            user-select: none;
+            user-zoom: none;
+        }
+
+        body>*,
+        body>form>input {
+            outline: 0;
+            border-radius: 25px;
+            background-color: #F5F5F7;
+            padding: 1vh 1vw 1vh 1vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font: min(2vh, 2vw);
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            min-width: min(6vh, 6vw);
+            min-height: min(3vh, 3vw);
+        }
+    </style>
+    <script type="module">
+        import { getGradientFromUrl } from "./main.js";
+        window.addEventListener('load', async evl => {
+            document.getElementsByTagName("form")[0]?.addEventListener('submit', async e => {
+                e.preventDefault();
+                const gradient = await getGradientFromUrl(e.currentTarget.url.value);
+                console.log(gradient);
+                document.body.style.background = gradient;
+            });
+            document.getElementsByTagName('button')[0]?.addEventListener('click', async ebl => {
+                const fileInput = document.createElement("input");
+                fileInput.type = "file";
+                fileInput.accept = "image/*";
+                fileInput.style.display = "none";
+                fileInput.click();
+                fileInput.addEventListener('change', () => {
+                    const file = fileInput.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+
+                        reader.onload = async (event) => {
+                            const gradient = await getGradientFromUrl(event.target.result);
+                            console.log(gradient);
+                            document.body.style.background = gradient;
+                        };
+
+                        reader.readAsDataURL(file);
+                    }
+
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="url" placeholder="paste an image url" id="">
+    </form>
+    <button type="button">Upload a picture</button>
+</body>
+
+</html>
