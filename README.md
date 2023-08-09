@@ -26,14 +26,7 @@ or
 https://NacreousDawn596.github.io/dynamic-background/example.html
 ## Documentation
 
-### you can import all the functions to your html like so:
-```html
-    <script type="module">
-        import { * } from "https://cdn.jsdelivr.net/gh/NacreousDawn596/dynamic-background@master/main.js";
-    </script>
-```
-
-### or just some of the functions like:
+### you can just import some of the following functions like:
  ```html
     <script type="module">
         import { getGradientFromUrl, getGradientFromId, getGradientFromElement } from "https://cdn.jsdelivr.net/gh/NacreousDawn596/dynamic-background@master/main.js";
@@ -76,7 +69,7 @@ https://NacreousDawn596.github.io/dynamic-background/example.html
 
 <body>
     <div>
-        <img src="https://github.com/NacreousDawn596/dynamic-background/raw/master/rose-pine-bg%402x.png" />
+        <img src="https://cdn.jsdelivr.net/gh/NacreousDawn596/dynamic-background@master/rose-pine-bg%402x.png" />
     </div>
     <script type="module">
         import { getGradientFromElement } from "https://cdn.jsdelivr.net/gh/NacreousDawn596/dynamic-background@master/main.js";
