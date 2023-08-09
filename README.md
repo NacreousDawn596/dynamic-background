@@ -11,6 +11,12 @@ a little javascript project to generate gradient color based on a picture to put
 | Id | getGradientFromId() |
 | Element in general | getGradientFromElement() |
 
+## Parameters:
+- [CRUTIAL] depending on each of the function above, you can either pass an id, url or element
+- [OPTIONAL] direction: it's "to bottom" by default, you can change it to something like "87deg" or whatever you want
+- [OPTIONAL] width: by default it's the picture's width, but you can change it in pixels, like "1280" for example
+- [OPTIONAL] height: by default it's the picture's height, but you can change it in pixels, like "720" for example
+
 ## Demo
 
 https://NacreousDawn596.github.io/dynamic-background/
